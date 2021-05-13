@@ -101,10 +101,10 @@ export default class TwitterStream {
           const response = await this._connect();
           const stream = response.body.pipe(split());
 
-          this._refreshTimeout();
+        //   this._refreshTimeout();
 
           stream.on('data', (line) => {
-            this._refreshTimeout();
+            // this._refreshTimeout();
 
             if (!line.trim()) {
               return;
