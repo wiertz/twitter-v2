@@ -64,9 +64,7 @@ class TwitterStream {
                     this._state = State.STARTED;
                     const response = await this._connect();
                     const stream = response.body.pipe(split_1.default());
-                    this._refreshTimeout();
                     stream.on('data', (line) => {
-                        this._refreshTimeout();
                         if (!line.trim()) {
                             return;
                         }
